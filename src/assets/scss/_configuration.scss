@@ -1,0 +1,64 @@
+// color
+$background-body: #f9f5f5;
+$color-base : #000 !default;
+$gray-dark: lighten($color-base, 20%) !default; // #333
+$color-grey: #CCCCCC;
+
+// color use
+$color-main: #666666;
+$color-text: #474747;
+$color-placeholder: #999999;
+$color-study-route: #237ED9;
+$color-btn: #00619D;
+$color-filter: #0089DE;
+$background-contain: #F9F5F5;
+
+$color-master:#51646b;
+$color-success: #47b5ab;
+$color-complete: #69b6f3;
+$color-warning: #f9dc6b;
+$color-danger: #eb7374;
+$color-info: #4d6286;
+$color-primary: #05B9E4;
+$color-error: #f44336;
+$color-white: #FFFFFF;
+$color-white-2: #FAF5F5;
+$color-black: #000000;
+$color-grey-2: #253036;
+$color-grey-3: #E4E4E4;
+$color-grey-4:#F2F2F2;
+$color-grey-5: #999999;
+$color-grey-6: #E8EDF2;
+$color-grey-7: #F3F3F3;
+$color-grey-8: #333333;
+$color-grey-9: #606060;
+$color-grey-10: #E6E1E1;
+
+//text
+$link-color: #337ab7;
+$text-color: $gray-dark !default;
+//Forms
+$form-label-min-width: 150px;
+$form-label-max-width: 200px;
+$form-input-min-width: 250px;
+$form-input-max-width: 300px;
+$form-max-width: 600px;
+$form-group-height: 54px;
+$form-control-border-color: lighten($color-black, 18%);
+//
+// Typography
+//
+$font-family-base:'Open Sans',Arial,sans-serif;
+$font-size-base: 14px !default;
+
+$font-weight-regular: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+
+// Screen size
+$screen-large: 1200px;
+$screen-medium: 992px;
+$screen-small: 768px;
+
+
+$menu-background:  #227093;

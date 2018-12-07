@@ -1,0 +1,181 @@
+html
+.reveal-overlay {
+  z-index: 100001;
+  overflow-y: hidden;
+}
+.reveal {
+  z-index: 100001;
+}
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  * {
+    outline: none;
+  }
+}
+
+body {
+  background: $background-body;
+  margin: 0;
+  padding: 0;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-base;
+  color: $gray-dark;
+  //line-height: 1.5;
+  font-family: $font-family-base !important;
+
+}
+
+select {
+  @include text-format(semibold, 13px);
+  color: $color-text;
+  margin-bottom: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[tabindex='-1']:focus {
+  outline: none;
+}
+
+select,
+button,
+textarea,
+input {
+  vertical-align: baseline;
+}
+
+html,
+body {
+  &[dir=rtl],
+  &[dir=ltr] {
+    unicode-bidi: embed
+  }
+}
+
+bdo[dir=rtl] {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+bdo[dir=ltr] {
+  direction: ltr;
+  unicode-bidi: bidi-override;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  margin: 0;
+  // line-height: 1.6;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+//size for icon
+// .menu [class^="tmb-icon-"] {
+//   font-size: $font-size-icon;
+//   padding-right: 5px;
+//   width: $icon-width;
+// }
+
+//scrollbar
+// ::-webkit-scrollbar {
+//   width: 8px;
+//   height: 8px;
+// }
+
+// ::-webkit-scrollbar-track {
+//   border-radius: 10px;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   border-radius: 10px;
+//   background: lightgrey;
+//   height: 5px;
+// }
+
+// ::-webkit-scrollbar-thumb:window-inactive {
+//   background: lightgrey;
+//   height: 5px;
+// }
+
+.space-between-box {
+  @include flex;
+  @include justify-content(space-between);
+}
+
+.align-items-center {
+  @include flex;
+  @include align-items(center);
+}
+
+.align-items-end {
+  @include flex;
+  @include align-items(flex-end);
+}
+
+.justify-items-end {
+  @include flex;
+  @include justify-content(flex-end);
+  margin: 10px 0px;
+}
+
+.font-size-common {
+  font-size: 1.4em;
+}
+
+// .incomplete-text {
+//   color: #fff;
+//   background-color: #ff0000;
+//   padding: 3px 7px;
+//   border-radius: 5px;
+// }
+
+.direction-column {
+  @include flexbox;
+  @include flex-direction(column);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.dot-text {
+  @include dot-text;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.height-auto {
+  height: auto;
+}
+
+.build-version {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  p {
+    font-size: 10px !important;
+    color: #9a9a9a70;
+    margin-bottom: 0 !important;
+  }
+
+}
