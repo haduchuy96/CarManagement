@@ -1,0 +1,135 @@
+.container{
+  margin-top: 45px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 500px;
+}
+
+.white-box {
+  background: #fff;
+}
+
+.page-title {
+  padding: 10px 8px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+}
+
+
+
+.infoUser {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  .avatarProfile {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    overflow: hidden;
+    margin-right: 15px;
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  .infoProfile {
+    width: calc(100% - 270px);
+    .nameProfile {
+      font-size: 18px;
+      line-height: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 8px auto;
+      font-weight: bold;
+      margin-top: 18px;
+      padding: 5px 0;
+      a {
+        color: #1e1e1e;
+        text-decoration: none;
+      }
+    }
+    .ballanceProfile {
+      font-size: 14px;
+      color: #1e1e1e;
+      height: 20px;
+      line-height: 20px;
+      span {
+        float: left;
+        margin-right: 5px;
+      }
+      .moneyDongTot {
+        max-width: 200px;
+        min-width: 100px;
+        overflow: hidden;
+        display: inline-block;
+      }
+    }
+    .linkProfile {
+      text-decoration: none;
+      font-size: 14px;
+      color: #2D65A0;
+      font-weight: 500;
+    }
+  }
+  .userProfile {
+    position: absolute;
+    top: 0px;
+    right: -8px;
+    border: 1px solid #fdc587;
+    border-right: none;
+    padding: 5px;
+    border-radius: 15px 0 0 15px;
+    line-height: 20px;
+    background: #fecb2f;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    img {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      float: left;
+      border: 1px solid #fff;
+    }
+    span {
+      float: left;
+      font-size: 12px;
+      margin-left: 5px;
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      height: 20px;
+      max-width: 130px;
+      color: #241c05;
+    }
+  }
+}
+
+
+
+
+
+
+@media (min-width: $screen-large) {
+  .container{
+    width: 976px;
+  }
+}
+
+@media (min-width:h $screen-medium) {
+  .container{
+    width: 970px;
+  }
+}
+
+@media (min-width: $screen-small) {
+  .container{
+    width: 750px;
+  }
+}

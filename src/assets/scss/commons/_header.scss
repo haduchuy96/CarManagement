@@ -31,18 +31,165 @@
       justify-content: flex-end;
       margin-right: 10px;
 
+      .header-navItem:hover {
+        background-color: #05c46b;
+      }
+      .header-navItem:hover .header-menu {
+        display: block;
+      }
+
+      .header-navItem.active {
+        background-color: #05c46b;
+      };
+
       .header-navItem {
         float: right;
         height: 45px;
         line-height: 45px;
         padding: 0 5px;
         cursor: pointer;
-        .header-navItemLink {
-          color: #000000;
-          text-decoration: none;
-          height: 100%;
+
+        .header-text {
+          margin-left: 10px;
+          max-width: 130px;
+          height: 45px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
           display: block;
+          float: right;
+          overflow: hidden;
+          color: #ffffff;
         }
+        .header-icon {
+          width: 22px;
+          height: 22px;
+          vertical-align: middle;
+        }
+
+        .header-menuMore-menuWrapper {
+          position: relative;
+          .header-navItemLink {
+            color: #ffffff;
+            text-decoration: none;
+            height: 100%;
+            display: block;
+            .header-text {
+              margin-left: 10px;
+              max-width: 130px;
+              height: 45px;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              display: block;
+              float: right;
+              overflow: hidden;
+            }
+            .header-icon {
+              width: 22px;
+              height: 22px;
+              vertical-align: middle;
+            }
+          }
+
+        }
+        .header-menu {
+          display: none;
+          position: absolute;
+          width: 300px;
+          height: auto;
+          max-height: 590px;
+          right: -10px;
+          left: auto;
+          background: #fff;
+          padding: 10px 0;
+          border: 1px solid rgba(0,0,0,0.15);
+          -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          border-top: none;
+        }
+        .header-menuMore-listItemWrapper {
+          padding: 0 10px;
+          .header-UserMenuItem {
+            position: relative;
+            padding: 10px;
+          }
+          .header-UserMenuItem-left {
+            display: block;
+            background-image: url(https://static.chotot.com.vn/storage/marketplace/common/png/default_user.png);
+            background-size: 100% 100%;
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+            float: left;
+          }
+
+          .header-UserMenuItem-right {
+            float: left;
+            margin-left: 10px;
+            margin-top: 5px;
+            width: calc(100% - 100px);
+          }
+          .header-UserMenuItem-above {
+            display: block;
+            color: #000000;
+            text-decoration: none;
+            line-height: normal;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .header-UserMenuItem-below {
+            color: #9b9b9b;
+            display: block;
+            font-size: 12px;
+            position: absolute;
+            top: 47px;
+            left: 80px;
+            text-decoration: none;
+            line-height: normal;
+          }
+          .header-Layout-clearFix {
+            clear: both;
+          }
+          .header-divider {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #cacaca;
+            margin: 5px 0;
+            padding: 0;
+          }
+          .header-icon--size30 {
+            width: 30px;
+            height: 30px;
+          }
+          .header-menuListItem {
+            display: block;
+            clear: both;
+            height: 38px;
+            line-height: 38px;
+            text-decoration: none;
+            color: #000000;
+          }
+
+          .header-menuListItem:hover {
+            color: #000000;
+            background-color: #f4f4f4;
+          }
+
+          .header-menuLeftItem {
+            float: left;
+            margin: 0 10px;
+          }
+
+          .header-menuRightItem {
+            float: left;
+          }
+
+
+        }
+
+
+
       }
     }
   }
@@ -66,5 +213,20 @@
   .header-layout-container {
     width: 750px;
     padding: 0 15px;
+  }
+
+  .header-menu {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 45px);
+    background: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 5px 0;
+    display: none;
+  }
+  .header-menuMore-listItemWrapper {
+    padding: 0
   }
 }

@@ -17,14 +17,17 @@ export class RegisterComponent {
         private alertService: AlertService) { }
 
     register() {
+      console.log("create")
         this.loading = true;
         this.userService.create(this.model)
             .subscribe(
                 data => {
+                  console.log("thang cong")
                     this.alertService.success('Registration successful', true);
                     this.router.navigate(['login']);
                 },
                 error => {
+                  console.log("that bai")
                     this.alertService.error(error);
                     this.loading = false;
                 });
