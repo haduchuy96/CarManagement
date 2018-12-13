@@ -1,0 +1,66 @@
+﻿<header class="body-header">
+  <div class="header-layout-container">
+    <div class="header-layout-leftPanel">
+      <a class="header-logoAnchor">
+        <img class="header-logo" src="../../../assets/img/logo.png" alt="CM">
+      </a>
+    </div>
+    <div class="header-layout-rightPanel">
+      <div class="header-navItem">
+        <div class="header-menuMore-menuWrapper">
+          <a class="header-navItemLink" >
+            <img class="header-icon" src="../../../assets/img/more.svg" alt="More">
+            <span class="header-text">More</span>
+          </a>
+          <div class="header-menu">
+            <div class="header-menuMore-listItemWrapper ">
+              <div class="header-UserMenuItem">
+                <a class="header-UserMenuItem-left" href="https://www.chotot.com/dashboard"></a>
+                <div class="header-UserMenuItem-right">
+                  <a class="header-UserMenuItem-above" href="">{{currentUser.firstName}}</a>
+                  <a class="header-UserMenuItem-below" href="">View your profile</a>
+                </div>
+                <div class="header-Layout-clearFix"></div>
+              </div>
+            </div>
+            <div class="header-menuMore-listItemWrapper ">
+              <hr class="header-divider">
+            </div>
+
+            <div class="header-menuMore-listItemWrapper ">
+              <a class="header-menuListItem" href="">
+                <div class="header-menuLeftItem">
+                  <img class="header-icon--size30 header-icon" src="https://static.chotot.com.vn/storage/chotot-icons/svg/circle-list.svg" alt="Lịch sử giao dịch">
+                </div>
+                <div class="header-menuRightItem">Lịch sử giao dịch</div>
+                <div class="clearfix"></div>
+              </a>
+            </div>
+
+
+            <div class="header-menuMore-listItemWrapper ">
+              <hr class="header-divider">
+            </div>
+
+            <div class="header-menuMore-listItemWrapper ">
+              <a class="header-menuListItem" [routerLink]="['/login']">
+                <div class="header-menuLeftItem">
+                  <img class="header-icon--size30 header-icon" src="https://static.chotot.com.vn/storage/chotot-icons/svg/sign-out.svg" alt="Đăng xuất">
+                </div>
+                <div class="header-menuRightItem">Logout</div>
+                <div class="clearfix"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-navItem">
+
+        <a class="header-navItemLink" [routerLink]="['/submit-car']">
+          <img class="header-icon" src="../../../assets/img/car-compact.svg" alt="Submit Car" >
+          <span class="header-text">Submit Car</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

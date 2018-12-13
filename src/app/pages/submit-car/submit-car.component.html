@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="container">
+  <div class="white-box row">
+    <div class="col-md-12" style="padding-bottom: 10px;">
+      <div class="img-container">
+        <img class="img-simple" src="/assets/img/car.jpg">
+      </div>
+    </div>
+    <form  class="col-md-12" name="form" (ngSubmit)="f.form.valid && addCar()" #f="ngForm" novalidate>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" required />
+        <div *ngIf="f.submitted && !name.valid" class="help-block">Name is required</div>
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !brand.valid }">
+        <label for="Brand">Brand</label>
+        <input type="text" class="form-control" name="brand" [(ngModel)]="model.brand" #brand="ngModel" required />
+        <div *ngIf="f.submitted && !brand.valid" class="help-block">Brand is required</div>
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !version.valid }">
+        <label for="Version">Version</label>
+        <input type="text" class="form-control" name="version" [(ngModel)]="model.version" #version="ngModel" required />
+        <div *ngIf="f.submitted && !version.valid" class="help-block">Version is required</div>
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !price.valid }">
+        <label for="Price">Price</label>
+        <input type="number" class="form-control" name="price" [(ngModel)]="model.price" #price="ngModel" required />
+        <div *ngIf="f.submitted && !price.valid" class="help-block">Price is required</div>
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !note.valid }">
+        <label for="Note">Note</label>
+        <input type="text" class="form-control" name="note" [(ngModel)]="model.note" #note="ngModel" required />
+        <div *ngIf="f.submitted && !note.valid" class="help-block">Note is required</div>
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !avability.valid }">
+        <label for="Avability">Avability</label>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Please select
+            <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
+            <li role="presentation"><a role="menuitem" href="#">CSS</a></li>
+            <li role="presentation"><a role="menuitem" href="#">JavaScript</a></li>
+          </ul>
+        </div>
+
+        <div *ngIf="f.submitted && !note.valid" class="help-block">Avability is required</div>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary">Submit</button>
+      </div>
+      <div class="form-group">
+        <br>  <br>  <br>  <br>  <br>
+      </div>
+    </form>
+  </div>
+</div>
