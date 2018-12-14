@@ -6,7 +6,7 @@
         <h1 class="page-title">Manage postings</h1>
       </div>
 
-      <div class="infoUser hidden-xs">
+     <!-- <div class="row infoUser">
         <div class="avatarProfile pull-left">
           <a href="">
             <img src="https://static.chotot.com.vn/storage/PRIVATE_DASHBOARD_CDN/32ea486819346b666d9e012fea3f5be0.png">
@@ -18,11 +18,35 @@
           </div>
           <span><a href="" class="linkProfile">View your profile</a></span>
         </div>
+      </div>-->
+      <div class="row">
+        <ul>
+          <li *ngFor="let item of cars | paginate: { itemsPerPage: 10, currentPage: p }" class="listView">
+            <a class="listingItem">
+              <div class="listingThumbnail">
+                <img class="thumbnailImageListing " src="https://static.chotot.com.vn/1/images/3QDrXECN27wBzvfgUdSMJj2RWyXtEZQYgfkEedat9FzrTGmvK1mb6ib9Yah6zE5LFNwWNzT.BKT5iCP6LPhoBkFQHy18ufw63UxEDbwBiiQaM1gCWjjX">
+              </div>
+              <div class="listingBody">
+                <h3 class="listingTitle ">{{item.name}}</h3>
+                <div class="listingUpperBody">
+                  <span class="listingPrice">
+                    <span class="priceNormal">{{item.price}} USD</span>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+
+          </li>
+        </ul>
+
+        <pagination-controls class="pagination-container" (pageChange)="p = $event"></pagination-controls>
+
       </div>
-
-
-
     </div>
+
+
+
   </div>
 </div>
 
