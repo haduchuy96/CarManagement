@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 
-import { User } from '../../_models/index';
-import { UserService } from '../../_services/index';
+import { User, Car } from '../../_models/index';
+import { UserService, CarService } from '../../_services/index';
 
 @Component({
     templateUrl: 'home.component.html'
@@ -9,21 +9,25 @@ import { UserService } from '../../_services/index';
 
 export class HomeComponent implements OnInit {
     currentUser: User;
-    users: User[] = [];
+    Cars: Car[] = [];
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService,
+                private carService: CarService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
 
     ngOnInit() {
-        this.loadAllUsers();
+        this.loadAllCarsByUserId();
     }
 
     deleteUser(id: number) {
         this.userService.delete(id).subscribe(() => { this.loadAllUsers() });
     }
 
-    private loadAllUsers() {
-        this.userService.getAll().subscribe(users => { this.users = users; });
+    private loadAllCarsByUserId() {
+        this.carService.getByUserId(this.currentUser.id).subscribe(cars => {
+          this.cars = cars;
+          console.log(this.cars);
+        });
     }
 }

@@ -6,7 +6,7 @@
         <img class="img-simple" src="/assets/img/car.jpg">
       </div>
     </div>
-    <form  class="col-md-12" name="form" (ngSubmit)="f.form.valid && addCar()" #f="ngForm" novalidate>
+    <form  class="col-md-12" name="form" (ngSubmit)="f.form.valid &&submitCar()" #f="ngForm" novalidate>
       <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
         <label for="Name">Name</label>
         <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" required />
@@ -32,19 +32,12 @@
         <input type="text" class="form-control" name="note" [(ngModel)]="model.note" #note="ngModel" required />
         <div *ngIf="f.submitted && !note.valid" class="help-block">Note is required</div>
       </div>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !avability.valid }">
-        <label for="Avability">Avability</label>
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Please select
-            <span class="caret"></span></button>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-            <li role="presentation"><a role="menuitem" href="#">HTML</a></li>
-            <li role="presentation"><a role="menuitem" href="#">CSS</a></li>
-            <li role="presentation"><a role="menuitem" href="#">JavaScript</a></li>
-          </ul>
-        </div>
-
-        <div *ngIf="f.submitted && !note.valid" class="help-block">Avability is required</div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !avaibility.valid }">
+        <label for="Avaibility">Avability</label>
+          <select class="form-control" name="avaibility" [(ngModel)]="model.avaibility" #avaibility="ngModel" required>
+            <option *ngFor="let st of status" [value]="st.id">{{st.name}}</option>
+          </select>
+        <div *ngIf="f.submitted && !avaibility.valid" class="help-block">Avaibility is required</div>
       </div>
 
       <div class="form-group">

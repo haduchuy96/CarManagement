@@ -11,6 +11,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // array in local storage for registered users
     let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
+    let cars: any[] = JSON.parse(localStorage.getItem('cars')) || []
+
 
     // wrap in delayed observable to simulate server api call
     return of(null).pipe(mergeMap(() => {
@@ -112,6 +114,49 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return throwError({ status: 401, error: { message: 'Unauthorised' } });
         }
       }
+
+
+
+
+
+      // add car
+      if (request.url.endsWith('/cars/register') && request.method === 'POST') {
+        // get new car object from post body
+        console.log(request.body)
+        let newCar = request.body;
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if(currentUser){
+          newCar.userId = currentUser.id;
+          newCar.id = cars.length + 1;
+          cars.push(newCar);
+          localStorage.setItem('cars', JSON.stringify(cars));
+          // respond 200 OK
+          return of(new HttpResponse({ status: 200 }));
+        }else{
+          return throwError({ error: { message: 'User not found' } });
+        }
+      }
+
+      // get user by id
+      if (request.url.match(/\/cars\/\d+$/) && request.method === 'GET') {
+        // check for fake auth token in header and return user if valid, this security is implemented server side in a real application
+        if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
+          // find user by id in users array
+          let urlParts = request.url.split('/');
+          let id = parseInt(urlParts[urlParts.length - 1]);
+          let matchedCars = cars.filter(car => { return car.userId === id; });
+
+          return of(new HttpResponse({ status: 200, body: matchedCars }));
+        } else {
+          // return 401 not authorised if token is null or invalid
+          return throwError({ status: 401, error: { message: 'Unauthorised' } });
+        }
+      }
+
+
+
+
+
 
       // pass through any requests not handled above
       return next.handle(request);
